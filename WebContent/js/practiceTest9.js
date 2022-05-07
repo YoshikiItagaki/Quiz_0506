@@ -30,8 +30,20 @@ function higherPrice(targetPrice){
 		if(targetPrice > items[i].price * items[i].count){
 			continue;
 		}
-		console.log("商品名:" + items[i].name + "小計：" + items[i].price * items[i].count + "円");
+		const itemsApplied = "商品名:" + items[i].name + " 小計：" + items[i].price * items[i].count + "円\n";
+		console.log(itemsApplied);
+		document.getElementById('output').innerHTML += itemsApplied + '<br>' ;
+
 	}
+
 	return;
+
 }
 
+
+//When you try to output multiple JavaScript objects of that kind into HTML, namely for loop objects,
+//what is to be done is add a new line at the end of each line.
+//To do so, keep in mind that you put an addition assignment operator first and create another new line with a <br> tag after that.
+//By doing so, you can avoid overwriting outputs from JavaScript in the same line forever.
+//Otherwise, once a certain process executed per iteration, you keep on overwriting outputs each time,
+//and as a consequence, it's unlikely to get any of which you're expecting to.
